@@ -1,0 +1,86 @@
+.loginPage{
+   flex: 10;
+   height: calc(100vh - 50px);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #FFFDF3;
+}
+.loginTitle{
+    position: absolute;
+    top: 90px;
+    color: #404040;
+}
+.loginWrapper{
+    width: 60%;
+    height: 75%;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 75);
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+.loginLeft, .loginRight{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.center{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.or{
+    border: 2px solid lightgray;
+    border-radius: 50%;
+    padding: 10px;
+    color: gray;
+    background-color:white;
+    font-weight: bold;
+}
+.line{
+    width: 0.5px;
+    height: 70%;
+    background-color: lightgray;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+}
+.loginButton{
+    width: 150px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.logButt{
+    border-radius: 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid ;
+    color: white;
+    background-color:#E93B04;
+    align-items: center;
+}
+.google{
+    background-color: #df4930;
+}
+.facebook{
+    background-color: #507cc0;
+}
+.loginIcon{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}

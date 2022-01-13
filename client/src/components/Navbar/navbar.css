@@ -1,0 +1,48 @@
+.logoo{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    padding: 15px;
+}
+.navContainer{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+.mx-auto{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.myNav{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.logNav{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-expand-lg .navbar-nav {
+    width: 80%;
+}
+.navContainer{
+    background-color: #49B56D;
+
+}
+
+
+/* #49B56D */
+
+
+
+
+
+
+
+
+
