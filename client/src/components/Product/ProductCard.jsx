@@ -9,8 +9,9 @@ const ProductCard = ({el}) => {
 
 
 <Card style={{ width: '18rem' }}>
-  <Card.Img  variant="top" src="https://img.cuisineaz.com/680x357/2017/09/06/i132233-boeuf-bourguignon-au-companion.jpeg"
-  // {el.photo}
+  <Card.Img  variant="top" src=
+  // "https://img.cuisineaz.com/680x357/2017/09/06/i132233-boeuf-bourguignon-au-companion.jpeg"
+  {el.photo}
    />
   <Card.Body>
     <Card.Title>{el.article}</Card.Title>

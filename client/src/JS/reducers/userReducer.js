@@ -49,11 +49,11 @@ const userReducer = (state = initialState, {type , payload}) =>{
             return {
                 ...state,
                 loading: false,
-                msg : payload,
+                user : payload,
                 isAuth: true,
             }
         case USER_LOGIN_SUCCESS :
-          localStorage.setItem("token", payload.token);
+          // localStorage.setItem("token", payload.token);
              return {
            ...state,
            loading : false,

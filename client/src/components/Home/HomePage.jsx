@@ -27,7 +27,7 @@ const HomePage = () => {
     return (
 
 
- isAuth ? <Redirect to="/" /> :
+//  isAuth ? <Redirect to="/" /> :
 
      <div>
 
@@ -35,6 +35,8 @@ const HomePage = () => {
 
          <div> 
              <h1 className="menuu"> Au menu cette semaine </h1>
+             <h3 style={{paddingLeft:"240px"}}> Il n’a jamais été aussi simple de bien manger.</h3>
+             <h4 style={{paddingLeft:"240px"}}> La box à cuisiner responsable et BIO livrée chez vous</h4>
              <p style={{paddingLeft:"100px", marginTop:"40px", marginBottom:"40px"}}> Chez So'Fresh box, nous planchons chaque semaine pour vous régaler avec de nouvelles recettes faciles à réaliser, variées et équilibrées.</p>
 
          </div>

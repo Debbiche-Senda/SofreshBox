@@ -57,7 +57,9 @@ const NewProduct = () => {
             <form className="addProductForm">
                 <div className="addProductItem">
                     <label> Image</label>
-                    <input type="file" id="file" value={photo} onChange={(e)=>setPhoto(e.target.value)}/>
+                    <input type="url" id="url" value={photo} onChange={(e)=>setPhoto(e.target.value)}/>
+
+                    {/* <input type="file" id="file" value={photo} onChange={(e)=>setPhoto(e.target.value)}/> */}
                 </div>
                 <div className="addProductItem">
                     <label>Nom du produit</label>

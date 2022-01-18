@@ -68,7 +68,7 @@ exports.getUsers = async (req, res) => {
     }
 };
 
-/******************** Get user by ID ********************** */
+/******************** Get user by ID  (Profile) ********************** */
 
 exports.getUserById = async (req, res) => {
   const { _id } = req.params;
@@ -76,9 +76,23 @@ exports.getUserById = async (req, res) => {
 
   try {
     await
-    res.status(201).json({ msg : "Get user success", user});
+    res.status(201).json({ msg : "Get user profile success", user});
   } catch (error) {
     console.log(error);
-    res.status(401).json({msg: "Get user failed"});
+    res.status(401).json({msg: "Get user profile failed"});
   }
 };
+
+/************************ Edit User Profile    *************************** */
+
+exports.editUser = async (req, res) =>{
+  let { _id } = req.params;
+  try {
+      await User.findByIdAndUpdate({ _id }, { $set: { ...req.body } });
+      res.status(203).json({ msg: "User updated successfully" });
+  } catch (error) {
+      console.log("User update failed", error);
+  res.status(403).json({ msg: "User update failed" });
+  }
+
+}

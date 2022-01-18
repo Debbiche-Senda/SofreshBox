@@ -31,7 +31,8 @@ export const userLogin = (payload) => async (dispatch) => {
   
     try {
       const res = await axios.post("api/user/login", payload);
-      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("token" , res.data.token)
+      console.log("token",res.data.token)
       dispatch({ type: USER_LOGIN_SUCCESS, payload: res.data.token });
     } catch (error) {
       dispatch({ type: USER_LOGIN_FAILED, payload: error.res.data.msg });
@@ -41,7 +42,7 @@ export const userLogin = (payload) => async (dispatch) => {
 
 /******************** Get profile action creator ********************** */
 
-export const getProfile = () => async (dispatch) => {
+export const getProfile = (_id) => async (dispatch) => {
   dispatch({ type: GET_PROFILE });
 
   const config = {
@@ -51,7 +52,7 @@ export const getProfile = () => async (dispatch) => {
   };
 
   try {
-    const res = await axios.get("api/user/getUser", config);
+    const res = await axios.get("api/user/current-user", config);
 
     dispatch({ type: GET_PROFILE_SUCCESS, payload: res.data });
   } catch (error) {
@@ -98,13 +99,20 @@ export const getAuthUser = () => async (dispatch) => {
 export const editUser = (id, editUser) => async (dispatch) => {
   dispatch({ type: EDIT_USER });
 
+  const config = {
+    headers: {
+      authorization: localStorage.getItem("token"),
+    },
+  };
+
+
   try {
-    const res = await axios.put(`/api/user/${id}`, editUser);
+    const res = await axios.put(`/api/user/editUser/${id}`, editUser , config);
 
     dispatch({ type: EDIT_USER_SUCCESS, payload: res.data });
-    dispatch(getProfile());
+    // dispatch(getProfile());
   } catch (error) {
-    console.log(error);
+    console.log("edit error" , error);
     dispatch({ type: EDIT_USER_FAILED, payload: error.response.data });
   }
 };

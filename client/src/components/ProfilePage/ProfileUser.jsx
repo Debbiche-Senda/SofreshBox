@@ -16,9 +16,13 @@ import { useState } from "react";
 
 const ProfileUser = () => {
 
-  // const [password , setPassword] = useState("")   
+
+  const [firstName , setFirstName] = useState("")   
+  const [lastName , setLastName] = useState("")
+  const [password , setPassword] = useState("")   
 
   const user = useSelector((state) => state.userReducer.user);
+  console.log("user :" , user)
 
   const dispatch = useDispatch();
   const history = useHistory()
@@ -26,8 +30,6 @@ const ProfileUser = () => {
 
     useEffect(() => {
         dispatch(getProfile())
-        // dispatch(editUser())
-        
     }, [])
 
     // setPassword("")
@@ -56,6 +58,8 @@ const ProfileUser = () => {
                   id="outlined-basic"
                   label="Nom" 
                   variant="outlined" 
+                  value={lastName}
+                  onChange={(e)=>setLastName(e.target.value)}
                 />
                </div>  
 
@@ -66,9 +70,11 @@ const ProfileUser = () => {
             id="outlined-basic" 
             label="Prénom" 
             variant="outlined"
+            value={firstName}
+            onChange={(e)=>setFirstName(e.target.value)}
              />
             </div> 
-            <div className="">
+            {/* <div className="">
             <span><EmailOutlinedIcon className="profile-icon"/></span>
             <TextField className="profile-input"
             style={{marginBottom:"20px"}} 
@@ -76,7 +82,7 @@ const ProfileUser = () => {
             label="E-mail"
             variant="outlined" 
             />
-            </div> 
+            </div>  */}
       
             <div>
             <span> <LockOpenOutlinedIcon className="profile-icon"/></span>
@@ -114,7 +120,8 @@ const ProfileUser = () => {
             left: "40px",
             border: "none"}} 
             variant="outlined"
-            // onClick={() => dispatch(editUser)}
+            onClick={() => dispatch(editUser(user._id,{ password, firstName, lastName
+            }))}
             >
                 Mettre à jour
             </Button>
