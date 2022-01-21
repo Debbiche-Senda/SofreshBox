@@ -2,6 +2,7 @@ const express = require("express");
 // const {models} = require('mongoose');
 const { userRegister, userLogin, getUsers, getUserById, editUser } = require("../controllers/user.controller");
 const isAuth = require("../middlewares/passport-setup");
+// const googleAuth = require("../middlewares/passport.google")
 const {registerRules, validator} = require("../middlewares/validator")
 const Router = express.Router();
 

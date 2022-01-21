@@ -63,7 +63,7 @@ export const getProducts = () => async (dispatch) => {
       const res = await axios.put(`/api/order/${id}`, editProduct);
   
       dispatch({ type: EDIT_PRODUCT_SUCCESS, payload: res.data });
-      dispatch(getProducts());
+      // dispatch(getProducts());
     } catch (error) {
       dispatch({ type: EDIT_PRODUCT_FAILED, payload: error.response.data });
     }
@@ -78,7 +78,7 @@ export const getProducts = () => async (dispatch) => {
           const res = await axios.delete(`/api/order/${id}`);
       
           dispatch({ type: DELETE_PRODUCT_SUCCESS, payload: res.data });
-          dispatch(getProducts());
+          // dispatch(getProducts());
         } catch (error) {
           dispatch({ type: DELETE_PRODUCT_FAILED, payload: error.response.data });
         }

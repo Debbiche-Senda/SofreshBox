@@ -1,72 +1,62 @@
-import "./product.css"
-import { Link } from "react-router-dom"
-import Chart from "../../chart/Chart"
-import {productData} from "../../dummyData"
+import './product.css';
+import { Link } from 'react-router-dom';
+import Chart from '../../chart/Chart';
+import { productData } from '../../dummyData';
 // import PublishOutlinedIcon from '@mui/icons-material/PublishOutlined';
-import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-// import { useState } from "react";
-import { deleteProduct, editProduct } from "../../../../JS/actions/adminActions";
-import { useDispatch} from "react-redux";
+import { deleteProduct } from '../../../../JS/actions/adminActions';
+import { useDispatch } from 'react-redux';
 
+const Product = ({ el }) => {
+  
+  const dispatch = useDispatch();
 
-
-
-const Product = ({el}) => {
-   const dispatch = useDispatch()
-
-
-    return (
-        <>
-        
-        <Link to={`/admin-dashboard-product/${el._id}`} className="link">
-    
-        <div className="product">
-            
-            <div className="productTop">
-                <div className="productTopLeft">
-                    <Chart data={productData} dataKey="Sales" title="Sales Performance"/>
-                </div>
-                <div className="productTopRight">
-                    <div className="productInfoTop">
-                        <img src={el.photo} alt="" className="productInfoImg" />
-                        <span className="productName">{el.name}</span>
-                    </div>
-                    <div className="productInfoBottom">
-                        <div className="productInfoItem">
-                            <span className="productInfoKey">{el.article}</span>
-                            <span className="productInfoValue">{el.quantité}</span>
-                        </div>
-                        <div className="productInfoItem">
-                            <span className="productInfoKey"> prix :</span>
-                            <span className="productInfoValue">{el.prix}</span>
-                        </div>
-                        <div className="productInfoItem">
-                            <span className="productInfoKey"> active :</span>
-                            <span className="productInfoValue"> yes</span>
-                        </div>
-                        <div className="productInfoItem">
-                            <span className="productInfoKey"> in stock :</span>
-                            <span className="productInfoValue"> no</span>
-                        </div>
-                        <Link to={`/admin-dashboard-editproduct/${el._id}`}>
-                        <button className="productAddButton"
-                        onClick={() => dispatch(editProduct(el._id))}
-                        > Edit</button>
-                        </Link>
-                        <Link to={`/admin-dashboard-deleteproduct/${el._id}`}>
-                        <DeleteOutlineOutlinedIcon className="productListDelete"
-                        />
-                        </Link>
-                        <button className="productAddButton"
-                        onClick={() => dispatch(deleteProduct(el._id))}
-                        > Delete</button>
-
-                    </div>
-
-                </div>
-
+  return (
+    <>
+      <div className="product">
+        <div className="productTop">
+          <div className="productTopLeft">
+            <Chart data={productData} dataKey="Sales" title="Sales Performance" />
+          </div>
+          <div className="productTopRight">
+            <div className="productInfoTop">
+              <img src={el.photo} alt="" className="productInfoImg" />
+              <span className="productName">{el.name}</span>
             </div>
-            {/* <div className="productBottom">
+            <div className="productInfoBottom">
+              <div className="productInfoItem">
+                <span className="productInfoKey">{el.article}</span>
+                <span className="productInfoValue">{el.quantité}</span>
+              </div>
+              <div className="productInfoItem">
+                <span className="productInfoKey"> prix :</span>
+                <span className="productInfoValue">{el.prix}</span>
+              </div>
+              <div className="productInfoItem">
+                <span className="productInfoKey"> active :</span>
+                <span className="productInfoValue"> yes</span>
+              </div>
+              <div className="productInfoItem">
+                <span className="productInfoKey"> in stock :</span>
+                <span className="productInfoValue"> no</span>
+              </div>
+              <div className='buttonss'>
+              <Link to={`/admin-dashboard-editproduct/${el._id}`}>
+                <button className="productAddButton"
+                 >
+                  Edit
+                </button>
+              </Link>
+              <Link to={`/admin-dashboard-product/${el._id}`} className="link">
+                <button className="productAddButton" >Details</button>
+              </Link>
+              <button className="productAddButton" onClick={() => dispatch(deleteProduct(el._id))}>
+                Delete
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <div className="productBottom">
                 <form className="productForm">
                 <div className="productFormLeft">
                 <label>Product Name</label>
@@ -96,10 +86,9 @@ const Product = ({el}) => {
                 </div>
                 </form>
             </div> */}
-        </div>
-            </Link>
-</>
-    )
-}
+      </div>
+    </>
+  );
+};
 
-export default Product
+export default Product;

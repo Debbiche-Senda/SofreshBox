@@ -39,6 +39,22 @@ app.use(cors({
     credentials: true,
 }))
 
+// app.get('/', (req, res)=>{
+//     res.send('<a href="/auth/google"> Authenticate with Google</a>')
+// })
+
+// app.get('/auth/google',
+//   passport.authenticate('google', { scope: ['email', 'profile']})
+// )
+
+
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+
 // Routes
 app.use("/api/user", user);
 app.use("/api/order", order);

@@ -2,7 +2,7 @@ import "./profileUser.css"
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+// import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
 import NavBar from "../Navbar/NavBar"
 import { editUser, getProfile, logOut } from "../../JS/actions/userActions"
@@ -135,7 +135,7 @@ const ProfileUser = () => {
             left: "40px",
             border: "none"}} 
             variant="outlined"
-            onClick={() => dispatch(logOut)}>
+            onClick={() => dispatch(logOut())}>
             Deconnexion
             </Button>
             </Link>

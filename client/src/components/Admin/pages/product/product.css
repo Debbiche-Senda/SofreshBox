@@ -11,11 +11,16 @@
     width: 80px;
     border: none;
     padding: 5px;
+    margin-left: 10px;
     background-color: #3bb077;
     color: white;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+}
+.buttonss{
+    margin-left: 50px;
+    margin-top: 20px;
 }
 .productTop{
     display: flex;

@@ -68,7 +68,7 @@ exports.getUsers = async (req, res) => {
     }
 };
 
-/******************** Get user by ID  (Profile) ********************** */
+/******************** Get user by ID  ********************** */
 
 exports.getUserById = async (req, res) => {
   const { _id } = req.params;

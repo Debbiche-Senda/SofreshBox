@@ -27,7 +27,8 @@
     "passport-facebook": "^3.0.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.0",
-    "react-bootstrap": "^2.1.0"
+    "react-bootstrap": "^2.1.0",
+    "react-modal": "^3.14.4"
   },
   "devDependencies": {
     "concurrently": "^6.5.0"
